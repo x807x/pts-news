@@ -1,10 +1,14 @@
 # PTS News
 [![Rust](https://github.com/x807x/pts-news/actions/workflows/rust.yml/badge.svg)](https://github.com/x807x/pts-news/actions/workflows/rust.yml)
+[![Crates.io](https://img.shields.io/crates/v/pts-news.svg)](https://crates.io/crates/pts-news)
+[![Documentation](https://docs.rs/pts-news/badge.svg)](https://docs.rs/pts-news)
+[![License](https://img.shields.io/crates/l/pts-news?labelColor=green
+)](https://github.com/x807x/pts-news/blob/master/LICENSE)
 
 PTS News is a Rust project that fetches and parses daily news from the [PTS News website](https://news.pts.org.tw).
 
 ## Getting Started
-
+5
 To use this in your project, run the following command:
 
 ```sh
