@@ -1,7 +1,7 @@
 [package]
 name = "pts-news"
 description = "Tools to fetch and parse daily news from the PTS News website"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license-file = "MIT"
 repository = "https://github.com/x807x/pts-news"
