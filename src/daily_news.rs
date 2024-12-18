@@ -4,6 +4,7 @@ use scraper::{ElementRef, Html, Selector};
 
 use crate::PTS_NEWS_URL;
 #[derive(Debug)]
+/// Represent an article
 pub struct DailyNews {
     pub title: String,
     pub id: u32,
@@ -15,6 +16,7 @@ pub struct DailyNews {
 }
 
 impl<'a> From<ElementRef<'a>> for DailyNews {
+    /// Converts an HTML element reference to a `DailyNews` instance.
     fn from(element_ref: ElementRef<'a>) -> Self {
         debug!("DailyNews from ElementRef: {}", element_ref.html());
         let title_selector = Selector::parse(r#"h2"#).unwrap();
@@ -93,12 +95,14 @@ impl<'a> From<ElementRef<'a>> for DailyNews {
     }
 }
 #[derive(Debug)]
+/// Represents a news category.
 pub struct NewsCategory {
     pub id: u32,
     pub name: String,
     pub link: String,
 }
 impl<'a> From<ElementRef<'a>> for NewsCategory {
+    /// Converts an HTML element reference to a `NewsCategory` instance.
     fn from(value: ElementRef<'a>) -> Self {
         debug!("NewsCategory from ElementRef: {}", value.html());
         Self {
@@ -123,11 +127,13 @@ impl<'a> From<ElementRef<'a>> for NewsCategory {
 }
 
 #[derive(Debug)]
+/// Represents a news hashtag.
 pub struct NewsHashTag {
     pub id: u32,
     pub name: String,
     pub link: String,
 }
+/// Converts an HTML element reference to a `NewsHashTag` instance.
 impl<'a> From<ElementRef<'a>> for NewsHashTag {
     fn from(value: ElementRef<'a>) -> Self {
         debug!("NewsHashtag from ElementRef: {}", value.html());
@@ -149,6 +155,7 @@ impl<'a> From<ElementRef<'a>> for NewsHashTag {
     }
 }
 
+/// Fetches the daily news from the PTS News website.
 pub async fn get_daily_news() -> Vec<DailyNews> {
     let mut headers = HeaderMap::new();
     headers.insert(USER_AGENT, HeaderValue::from_static(
