@@ -1,4 +1,5 @@
 # PTS News
+[![Rust](https://github.com/x807x/pts-news/actions/workflows/rust.yml/badge.svg)](https://github.com/x807x/pts-news/actions/workflows/rust.yml)
 
 PTS News is a Rust project that fetches and parses daily news from the [PTS News website](https://news.pts.org.tw).
 
